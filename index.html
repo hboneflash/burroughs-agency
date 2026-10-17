@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="The Burroughs Agency. Existential investigations, cultural forensics, and the recovery of misplaced agency. A fictional detective agency with real questions."><meta name="theme-color" content="#ede9df"><title>The Burroughs Agency — Existential Detectives</title><style>@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Libre+Caslon+Display&display=swap');
+:root{--paper:#ede9df;--ink:#24271f;--muted:#626458;--red:#a43828;--line:#bcbcaf;--acid:#c8d67b;--mono:'IBM Plex Mono',monospace;--serif:'Libre Caslon Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:30px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--red);outline-offset:6px}
+.skip{position:absolute;top:-90px;z-index:10;background:var(--ink);color:var(--paper);padding:15px}
+.skip:focus{top:0}
+.topline{display:flex;justify-content:space-between;background:var(--ink);color:#dedfce;padding:9px 5%;font:9px var(--mono);letter-spacing:1.6px}
+header{margin:0 5%;padding:26px 0;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);gap:28px}
+.identity{display:flex;gap:14px;align-items:center;font-size:17px;font-weight:700;line-height:1.1;letter-spacing:1px}
+.identity-sub{display:block;font:8px var(--mono);letter-spacing:2px;margin-top:8px}
+.monogram{font-family:var(--serif);font-size:56px;line-height:1;letter-spacing:-14px;border:1px solid var(--ink);padding:0 19px 2px 7px}
+.monogram span{font-size:40px}
+nav{display:flex;gap:30px;font-size:13px}
+nav a:hover,.header-link:hover{text-decoration:underline;text-underline-offset:6px}
+.count{font:10px var(--mono);border:1px solid var(--line);padding:2px 4px;margin-left:4px}
+.header-link{font-size:12px;border-bottom:1px solid var(--ink);padding-bottom:6px}
+.header-link span{margin-left:20px}
+.hero{display:grid;grid-template-columns:1fr 1fr;max-width:1500px;margin:auto;padding:63px 5% 58px;gap:20px;overflow:hidden}
+.eyebrow{font:10px var(--mono);letter-spacing:1.2px;margin:0 0 28px}
+.dot{display:inline-block;width:7px;height:7px;background:var(--red);border-radius:50%;margin-right:8px}
+h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-2px;line-height:1.02}
+h1{font-size:clamp(70px,7.7vw,116px);margin:0 0 30px}
+h1 em,h2 em{font-weight:400}
+h1 em{color:var(--red)}
+.lead{font-size:19px;line-height:1.5;margin:0 0 19px}
+.hero-text{max-width:390px;color:var(--muted);font-size:14px;margin-bottom:28px}
+.button{display:inline-flex;gap:50px;justify-content:space-between;align-items:center;padding:16px 21px;background:var(--ink);color:var(--paper);border:1px solid var(--ink);font-size:12px;font-weight:600;transition:background .2s,transform .2s}
+.button:hover{background:var(--red);border-color:var(--red);transform:translateY(-2px)}
+.button span{font-size:18px;line-height:1}
+.small-note{font:9px var(--mono);color:var(--muted);margin-top:14px}
+.evidence-art{position:relative;min-height:550px;margin-top:7px}
+.art-grid{position:absolute;inset:28px 0 17px;background-image:linear-gradient(#76786016 1px,transparent 1px),linear-gradient(90deg,#76786016 1px,transparent 1px);background-size:29px 29px;transform:rotate(2deg);border:1px solid #aaa98d45}
+.art-id{position:absolute;top:0;left:18px;font:8px var(--mono);letter-spacing:1px}
+.sun-disc{position:absolute;width:64%;aspect-ratio:1;background:var(--acid);border-radius:50%;left:17%;top:60px}
+.television{position:absolute;top:90px;left:2%;width:95%;transform:rotate(-7deg);filter:drop-shadow(6px 12px 0px #23291e18)}
+.paper-strip{position:absolute;z-index:3;background:var(--ink);color:var(--paper);font:bold clamp(19px,2.5vw,35px) var(--sans);padding:1px 12px;letter-spacing:1px;box-shadow:3px 4px 0 #24271f20}
+.strip-one{top:28px;left:5%;transform:rotate(-6deg)}
+.strip-two{top:74px;left:30%;transform:rotate(3deg);background:#f6f0df;color:var(--ink)}
+.thread{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none}
+.evidence-tag{position:absolute;bottom:0;right:0;transform:rotate(7deg);background:#dad3bb;padding:18px 24px;box-shadow:2px 5px 7px #0002;width:210px}
+.evidence-tag:before{content:'';position:absolute;width:55px;height:20px;background:#d8d2b9aa;top:-10px;left:70px}
+.evidence-tag span{font:7px var(--mono);display:block}
+.evidence-tag strong{font-size:33px;line-height:1.05;display:block;margin:10px 0}
+.stamp{position:absolute;bottom:27px;left:15px;transform:rotate(-12deg);color:var(--red);border:3px double var(--red);padding:8px 13px;font:bold 23px var(--mono);line-height:1.1;text-align:center;opacity:.9}
+.stamp span{font-size:8px;letter-spacing:1px}
+.art-caption{position:absolute;bottom:127px;right:0;font:10px var(--mono);transform:rotate(4deg)}
+.ticker{display:flex;align-items:center;justify-content:space-around;gap:20px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:15px 4%;font:9px var(--mono);letter-spacing:.6px;background:#e1e2d3}
+.ticker span:nth-child(even){font-size:19px}
+.section{padding:80px 5%;display:grid;grid-template-columns:190px minmax(0,1fr);max-width:1500px;margin:auto;gap:25px}
+.section-label{font:10px var(--mono);letter-spacing:1px;padding-top:7px}
+.section-label>span{display:block;color:var(--muted);font-size:8px;margin-top:12px}
+h2{font-size:clamp(42px,4.5vw,67px);margin:0 0 30px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.two-col p{font-size:14px;max-width:425px;margin:0;color:#515449}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:45px;border-top:1px solid var(--line);padding-top:25px}
+.services span{font:10px var(--mono);color:var(--red)}
+h3{font-size:18px;line-height:1.3;font-weight:500}
+.services h3{margin:12px 0 8px}
+.services p{font-size:12px;color:var(--muted);max-width:220px}
+.exhibit{background:var(--ink);color:var(--paper);max-width:none}
+.exhibit .section-label{color:#c7c8b6}
+.exhibit .section-label>span{color:#a4a995}
+.exhibit-layout{display:grid;grid-template-columns:.9fr 1fr;gap:65px;align-items:center}
+.fake-ad{background:var(--acid);color:var(--ink);padding:24px 28px;position:relative;transform:rotate(-3deg);border:10px solid #ded9cb;box-shadow:7px 8px 0 #0003;max-width:385px}
+.fake-ad>span:first-child{font:7px var(--mono);letter-spacing:1px}
+.fake-ad>p{font-size:clamp(55px,6vw,87px);font-weight:700;line-height:.9;letter-spacing:-5px;margin:40px 0 22px}
+.fake-ad>p span{display:block;font-family:var(--serif);font-style:italic;letter-spacing:-1px}
+.ad-star{position:absolute;top:60px;right:24px;transform:rotate(16deg);border:1px solid var(--ink);border-radius:50%;padding:13px 8px;font:12px var(--mono)}
+.ad-bottom{border-top:1px solid;padding-top:15px;font:13px var(--mono)}
+.ad-bottom span{font-size:9px;display:block;line-height:1.5;max-width:230px;margin-top:7px}
+.barcode{display:block;margin-top:22px;width:80px;height:20px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px)}
+.exhibit-copy>p:not(.eyebrow):not(.small-note){font-size:14px;color:#c6c9b9;max-width:380px}
+.light{background:var(--paper);color:var(--ink);margin:16px 0 0}
+.light:hover{background:var(--acid);border-color:var(--acid)}
+.exhibit .small-note{color:#bdc2ab;font-size:8px}
+.exhibit h2{font-size:55px}
+.exhibit #finding{border-left:2px solid var(--acid);padding-left:20px;margin-top:25px;max-width:400px}
+.finding-label{font:9px var(--mono);color:var(--acid)}
+#finding h3{font-family:var(--serif);font-size:28px;margin:15px 0}
+#finding p:not(.finding-label){font-size:13px;color:#d0d2c5}
+.pencil-note{font-style:italic}
+.method-list article{display:grid;grid-template-columns:130px 1fr 1.2fr;gap:25px;border-top:1px solid var(--line);padding:25px 0}
+.method-list article>span{font:9px var(--mono);color:var(--red);padding-top:6px}
+.method-list h3{margin:0;max-width:190px}
+.method-list p{margin:0;font-size:13px;color:var(--muted)}
+.method-footnote{font:8px var(--mono);letter-spacing:.5px;margin-top:24px}
+.casefiles{border-top:1px solid var(--ink);background:#e4e2d5;max-width:none}
+.case-heading{display:flex;justify-content:space-between;gap:20px}
+.archive-count{font:57px var(--serif);text-align:right;color:#777c67}
+.archive-count span{display:block;font:8px var(--mono);letter-spacing:1px}
+.folder{margin-top:36px}
+.folder-tab{background:#d5cfb8;padding:12px 22px 8px;font:9px var(--mono);letter-spacing:.6px;display:inline-block;border:1px solid #aaa68e;border-bottom:0;border-radius:8px 14px 0 0}
+.folder-body{padding:35px 40px;background:#dcd6c0;border:1px solid #aaa68e;position:relative;box-shadow:4px 5px 0 #c6c3b1;overflow:hidden}
+.status{border:1px solid var(--red);color:var(--red);font:9px var(--mono);letter-spacing:1px;padding:5px 8px;display:inline-block;transform:rotate(-2deg)}
+.folder-body h3{font:34px/1.12 var(--serif);margin:28px 0 18px}
+.folder-body p{font-size:13px;max-width:535px;color:#565a4e;position:relative;z-index:1}
+.file-flow{display:flex;gap:20px;margin-top:35px;border-top:1px solid #aaa68e;padding-top:16px;font:8px var(--mono);letter-spacing:.4px;position:relative;z-index:1;flex-wrap:wrap}
+.file-flow span+span:before{content:'→';margin-right:20px}
+.folder-mark{position:absolute;right:10px;bottom:50px;font:130px var(--serif);color:#24271f0d;transform:rotate(-12deg)}
+.archive-note{font:9px/1.6 var(--mono);color:var(--muted);margin-top:20px}
+.closing{text-align:center;padding:80px 5%;border-bottom:1px solid var(--ink)}
+.closing .eyebrow{color:var(--red)}
+.closing h2{font-size:clamp(40px,5vw,74px);margin-bottom:30px}
+.closing a{font-size:12px;border-bottom:1px solid;padding-bottom:7px}
+.closing a span{margin-left:24px}
+footer{padding:30px 5% 20px}
+.footer-top{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:25px}
+.footer-brand{font-size:15px;font-weight:700;letter-spacing:1px}
+.footer-top>span{font:8px var(--mono);letter-spacing:1px}
+details{max-width:800px;font-size:12px;color:var(--muted)}
+summary{cursor:pointer;font:10px var(--mono);padding:5px 0}
+details a{text-decoration:underline;text-underline-offset:3px}
+.footer-bottom{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:20px;margin-top:30px;font:8px var(--mono);color:var(--muted);letter-spacing:.5px}
+[hidden]{display:none!important}
+@media(min-width:1550px){.exhibit,.casefiles{padding-left:max(5%,calc((100% - 1350px)/2));padding-right:max(5%,calc((100% - 1350px)/2))}
+}
+@media(max-width:1000px){.header-link{display:none}
+.hero{gap:0}
+.hero h1{font-size:80px}
+.evidence-art{min-height:510px}
+.television{top:140px}
+.strip-one{top:70px}
+.strip-two{top:105px}
+.sun-disc{top:130px}
+.evidence-tag{width:160px;padding:15px}
+.evidence-tag strong{font-size:27px}
+.stamp{font-size:18px;left:0;bottom:70px}
+.stamp span{font-size:6px}
+.art-caption{bottom:120px}
+.section{grid-template-columns:130px 1fr;gap:20px}
+.exhibit-layout{gap:35px}
+.fake-ad{padding:20px}
+.fake-ad>p{font-size:67px}
+.method-list article{grid-template-columns:100px 1fr}
+.method-list article p{grid-column:2}
+.ticker{font-size:8px}
+.exhibit h2{font-size:47px}
+}
+@media(max-width:700px){.topline{font-size:7px;letter-spacing:1px}
+.topline span:last-child{display:none}
+header{padding:20px 0;align-items:center;gap:15px}
+.identity{font-size:12px;gap:9px}
+.identity-sub{font-size:6px;letter-spacing:.8px}
+.monogram{font-size:40px;letter-spacing:-10px;padding-right:14px}
+.monogram span{font-size:28px}
+nav{gap:15px;font-size:11px}
+nav a:first-child{display:none}
+.count{display:none}
+.hero{grid-template-columns:1fr;padding-top:38px;padding-bottom:25px}
+.hero h1{font-size:85px;letter-spacing:-3px}
+.eyebrow{font-size:8px;letter-spacing:.8px;margin-bottom:24px}
+.lead{font-size:18px}
+.hero-text{max-width:380px}
+.evidence-art{width:100%;max-width:450px;min-height:480px;margin:30px auto 10px}
+.television{top:95px}
+.strip-one{top:26px;font-size:28px}
+.strip-two{top:65px;font-size:28px}
+.sun-disc{top:85px}
+.stamp{bottom:22px}
+.evidence-tag{bottom:4px}
+.art-caption{bottom:125px}
+.ticker{justify-content:center;text-align:center;padding:13px 5%;line-height:1.6}
+.ticker span:not(:first-child){display:none}
+.section{padding:45px 5%;display:block}
+.section-label{margin-bottom:28px}
+.section-label>span{display:inline;margin-left:12px}
+.section-label br{display:none}
+h2{font-size:47px;letter-spacing:-1px}
+.two-col{grid-template-columns:1fr;gap:18px}
+.services{gap:16px;margin-top:30px}
+.services h3{font-size:15px}
+.services p{font-size:11px}
+.exhibit-layout{grid-template-columns:1fr;gap:40px}
+.fake-ad{width:85%;margin:5px auto 0;padding:20px 26px}
+.fake-ad>p{font-size:85px;margin:28px 0 22px}
+.exhibit-copy{padding-top:10px}
+.exhibit h2{font-size:50px}
+.method-list article{grid-template-columns:95px 1fr;gap:15px}
+.method-list h3{max-width:none}
+.method-list article p{font-size:13px}
+.method-footnote{line-height:1.7}
+.case-heading h2{font-size:42px}
+.archive-count{font-size:40px}
+.archive-count span{font-size:6px}
+.folder-body{padding:25px}
+.folder-body h3{font-size:30px}
+.folder-tab{font-size:7px}
+.file-flow{gap:12px;font-size:7px}
+.file-flow span+span:before{margin-right:12px}
+.closing{padding:55px 5%}
+.closing h2{font-size:43px}
+.footer-top{display:block}
+.footer-top>span{display:block;margin-top:12px}
+.footer-bottom{flex-wrap:wrap;gap:15px;font-size:7px}
+.footer-bottom span:last-child{display:none}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+.button{transition:none}
+}
+
+</style></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<div class="topline"><span>PRIVATE INVESTIGATIONS / PUBLIC REALITY</span><span>DEPT. OF UNFINISHED BUSINESS</span></div>
+<header><a class="identity" href="#" aria-label="The Burroughs Agency home"><span class="monogram">B<span>A</span></span><span>THE BURROUGHS<br>AGENCY<span class="identity-sub">EXISTENTIAL DETECTIVES</span></span></a><nav aria-label="Main navigation"><a href="#agency">The agency</a><a href="#method">Our method</a><a href="#casefiles">Casefiles <span class="count">00</span></a></nav><a class="header-link" href="#exhibit">Examine the evidence <span>↗</span></a></header>
+<main id="main"><section class="hero"><div class="hero-copy"><p class="eyebrow"><span class="dot"></span> YOUR REALITY. UNDER INVESTIGATION.</p><h1>Who is living<br><em>your</em> life?</h1><p class="lead">Missing purpose. Suspicious coincidences.<br>Desires with somebody else’s fingerprints.</p><p class="hero-text">We follow the money, question the image, and interview the voice in your head that sounds remarkably like an advertisement.</p><a class="button" href="#casefiles">Enter the casefiles <span>↗</span></a><p class="small-note">Discretion assured. Certainty negotiable.</p></div>
+<div class="evidence-art" role="img" aria-label="Surreal evidence collage: a television displays an eye, a red thread connects it to a file marked Who benefits, and a pasted slogan reads You are free to choose from these options."><div class="art-grid"></div><span class="art-id">EXHIBIT 023 / RECOVERED FROM EVERYWHERE</span><div class="sun-disc"></div><div class="paper-strip strip-one">YOU ARE FREE</div><div class="paper-strip strip-two">TO CHOOSE*</div><svg class="television" viewBox="0 0 500 400" aria-hidden="true"><defs><pattern id="scan" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M0 1H5" stroke="#191b18" opacity=".13"/></pattern><pattern id="dots" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#191b18" opacity=".35"/></pattern></defs><path d="M244 85L181 20M253 85L338 5" fill="none" stroke="#262820" stroke-width="5"/><circle cx="181" cy="20" r="5"/><circle cx="338" cy="5" r="5"/><path d="M85 343L73 380M412 343L425 380" stroke="#262820" stroke-width="16"/><rect x="30" y="80" width="442" height="273" rx="28" fill="#262820"/><rect x="41" y="91" width="420" height="248" rx="20" fill="#b1b1a4" stroke="#121510" stroke-width="3"/><rect x="56" y="108" width="325" height="211" rx="48" fill="#deded0" stroke="#262820" stroke-width="9"/><rect x="56" y="108" width="325" height="211" rx="48" fill="url(#scan)"/><path d="M85 211Q215 94 351 211Q215 326 85 211Z" fill="#e9e6d8" stroke="#25281f" stroke-width="3"/><path d="M85 211Q215 94 351 211" fill="none" stroke="#25281f" stroke-width="9"/><circle cx="219" cy="211" r="55" fill="#9b9e89" stroke="#25281f" stroke-width="3"/><circle cx="219" cy="211" r="45" fill="url(#dots)"/><circle cx="219" cy="211" r="24" fill="#25281f"/><circle cx="232" cy="196" r="8" fill="#e9e6d8"/><path d="M108 180L96 160M140 155L133 136M174 140L171 124M306 175L317 157M272 151L278 133" stroke="#25281f" stroke-width="3"/><circle cx="420" cy="152" r="22" fill="#282a22"/><path d="M408 165L432 139" stroke="#dfddcc" stroke-width="3"/><circle cx="420" cy="210" r="16" fill="#282a22"/><path d="M412 221L427 198" stroke="#dfddcc" stroke-width="2"/><path d="M401 258H440M401 267H440M401 276H440M401 285H440" stroke="#282a22" stroke-width="4"/><text x="192" y="337" font-family="monospace" font-size="10" letter-spacing="4" fill="#eee9df">NORMAL™</text></svg><svg class="thread" viewBox="0 0 600 620" aria-hidden="true"><path d="M300 330L510 470L144 525" fill="none" stroke="#b33b29" stroke-width="2"/><circle cx="300" cy="330" r="6" fill="#b33b29"/><circle cx="510" cy="470" r="6" fill="#b33b29"/></svg><div class="evidence-tag"><span>FOLLOW THE QUESTION</span><strong>WHO<br>BENEFITS?</strong><span>NOT NECESSARILY A VILLAIN.</span></div><div class="stamp">REALITY<br><span>NOT YET VERIFIED</span></div><p class="art-caption">* from these options.</p></div></section>
+<div class="ticker"><span>MISSING: YOUR CAPACITY TO ACT</span><span aria-hidden="true">✳</span><span>LAST SEEN: BETWEEN THE AVAILABLE OPTIONS</span><span aria-hidden="true">✳</span><span>REWARD: TO BE DETERMINED BY YOU</span></div>
+<section class="agency section" id="agency"><div class="section-label">01 / THE AGENCY</div><div><h2>Something doesn’t add up.<br><em>Good. Start there.</em></h2><div class="two-col"><p>You bought the lifestyle. You learned the lines. You became the target demographic of your own rebellion. Yet the peculiar feeling persists that somebody else has been arranging the furniture inside your ambitions.</p><p>The Burroughs Agency investigates missing agency: the capacity to act within—and sometimes change—the conditions of your life. We examine the stories, institutions, incentives, and images that make an arrangement look like destiny.</p></div><div class="services"><div><span>01</span><h3>Missing selves</h3><p>For lives that seem to have been ghostwritten by a focus group.</p></div><div><span>02</span><h3>Cultural forensics</h3><p>Advertisements, screens, celebrity myths. Every image has a chain of custody.</p></div><div><span>03</span><h3>Agency recovery</h3><p>Locate the resources, allies, and decisions that make another action possible.</p></div></div></div></section>
+<section class="exhibit section" id="exhibit"><div class="section-label">02 / EVIDENCE DESK<br><span>INTERACTIVE SPECIMEN</span></div><div class="exhibit-layout"><div class="fake-ad"><span>EXHIBIT A · FICTIONAL ADVERTISEMENT</span><div class="ad-star">NEW!</div><p>BE<br>YOUR<span>SELF.</span></p><div class="ad-bottom">THE INDIVIDUAL™<br><span>Now available in three approved personalities.</span></div><span class="barcode" aria-hidden="true"></span></div><div class="exhibit-copy"><p class="eyebrow">A SMALL DEMONSTRATION</p><h2>The image is<br><em>an alibi.</em></h2><p>A familiar promise: buy this and become yourself. Before we arrest the billboard, let’s examine what it leaves out.</p><button class="button light" id="inspect" aria-expanded="false" aria-controls="finding">Examine the evidence <span>↗</span></button><div id="finding" hidden><p class="finding-label">FORENSIC NOTE / 001</p><h3>A choice of products is not the whole field of choice.</h3><p>The ad sells individuality while keeping the decision inside the shop. Ask who sets the options, who profits, and what time, money, access, or support would make a different action feasible.</p><p class="pencil-note">Possible next move: change the arrangement with other people—not merely the brand.</p></div><p class="small-note">A specimen of our method. Not a completed case.</p></div></div></section>
+<section class="method section" id="method"><div class="section-label">03 / OUR METHOD</div><div><h2>Cut up the story.<br><em>Keep the evidence.</em></h2><div class="method-list"><article><span>01 / INTERRUPT</span><h3>Make the familiar look strange.</h3><p>Put the slogan beside the receipt. Move the hero out of the frame. A cut-up can expose a hidden assumption; it cannot, by itself, prove a theory.</p></article><article><span>02 / TRACE</span><h3>Follow the conditions.</h3><p>Who owns the channel? Who sets the rule? Whose labor keeps the picture running? Sometimes the culprit is an ordinary incentive wearing a very expensive suit.</p></article><article><span>03 / ACT</span><h3>Find room to move. Widen it.</h3><p>Look for an action that changes what is possible: obtain a resource, refuse a role, build an alliance, contest a rule. Insight is a lead. Agency needs somewhere to go.</p></article></div><p class="method-footnote">AGENCY POLICY: A coincidence is a clue to examine, not a verdict to announce.</p></div></section>
+<section class="casefiles section" id="casefiles"><div class="section-label">04 / CASEFILES<br><span>PUBLIC READING ROOM</span></div><div><div class="case-heading"><h2>Every case begins<br>with <em>“hang on…”</em></h2><span class="archive-count">00<span>FILES RELEASED</span></span></div><div class="folder"><div class="folder-tab">THE BURROUGHS AGENCY / ARCHIVE</div><div class="folder-body"><span class="status">AWAITING FIRST CASE</span><h3>The filing cabinet is open.<br>The mysteries are forthcoming.</h3><p>This is where our short case stories will live: peculiar incidents, overlooked clues, and the small matter of who can actually change what happens next.</p><p>Some will pause before the solution, giving you the same evidence as the detective. The question won’t only be “Who did it?” It will be “Where is the room to act?”</p><div class="file-flow"><span>THE INCIDENT</span><span>THE CLUES</span><span>YOUR DEDUCTION</span><span>THE REVEAL</span></div><span class="folder-mark" aria-hidden="true">B/A</span></div></div><p class="archive-note">No case stories have been published yet. Please leave your assumptions at the desk.</p></div></section>
+<section class="closing"><p class="eyebrow">THE FIRST QUESTION IS COMPLIMENTARY.</p><h2>Who benefits from<br>your <em>“that’s just how it is”?</em></h2><a href="#exhibit">Return to the evidence <span>↑</span></a></section></main>
+<footer><div class="footer-top"><a class="footer-brand" href="#">THE BURROUGHS AGENCY</a><span>WE INVESTIGATE THE OBVIOUS. THOROUGHLY.</span></div><details><summary>A note from the Department of Context</summary><p>A fictional, satirical agency, inspired by the existential detectives of <cite>I Heart Huckabees</cite>, William S. Burroughs’s cut-up sensibility, and the reality-disrupting humor of Robert Shea and Robert Anton Wilson’s <cite>The Illuminatus! Trilogy</cite>. This is an independent creative project, not an affiliated detective service.</p><p>Our working idea of agency includes the social and material conditions that enable action, individually and together. For background, see <a href="https://journals.sagepub.com/doi/10.1177/0896920516684541" target="_blank" rel="noopener noreferrer">Hvinden and Halvorsen on agency, structure, and capabilities</a>. For the satirical tradition, see <a href="https://archive.rushkoff.com/articles/1118-operation-mindfuck-20.html" target="_blank" rel="noopener noreferrer">Douglas Rushkoff on Operation Mindfuck</a>.</p></details><div class="footer-bottom"><span>EST. WHEN YOU STARTED ASKING</span><span>FICTIONAL AGENCY. REAL QUESTIONS.</span><span>END OF FILE / FOR NOW</span></div></footer><script>const inspect = document.getElementById('inspect');
+const finding = document.getElementById('finding');
+inspect.addEventListener('click', () => {
+  const open = inspect.getAttribute('aria-expanded') !== 'true';
+  inspect.setAttribute('aria-expanded', String(open));
+  finding.hidden = !open;
+  inspect.innerHTML = open ? 'Close the forensic note <span>−</span>' : 'Examine the evidence <span>↗</span>';
+});
+</script></body></html>
